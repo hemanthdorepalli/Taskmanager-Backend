@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../TASK MANGAMENT-FrontEND"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TASK MANGAMENT-FrontEND"
+	}
+}

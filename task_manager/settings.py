@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-+r^^sgsq50$cexe3efzlc#5(saeo@$8z39-(b*#ml_y%i=1=e8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
       'rest_framework',       # Enable Django REST Framework
     'tasks',
     'corsheaders', 
+     'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +139,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+# APPEND_SLASH = False
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # Make sure this is set for protected views
+    ],
+}
